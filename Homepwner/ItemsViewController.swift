@@ -54,4 +54,15 @@ class ItemsViewController: UITableViewController{
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, commit edditingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        
+        if edditingStyle == .delete{
+            let item = itemStore.allItems[indexPath.row]
+            itemStore.removeItem(item)
+            
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        }
+        
+    }
 }
