@@ -20,6 +20,15 @@ class ItemStore{
         
     }
     
+    @discardableResult func createLastItem() -> Item {
+        let newItem = Item(name: "No more Items!", valueInDollars:0)
+        
+        allItems.append(newItem)
+        
+        return newItem
+        
+    }
+    
     func removeItem(_ item: Item){
         if let index = allItems.firstIndex(of: item){
             allItems.remove(at: index)
@@ -27,7 +36,15 @@ class ItemStore{
     }
     
     func moveItem(from fromIndex: Int, to toIndex: Int){
+        
+        let lastItemIndex = allItems.count - 1
+        
+        
         if fromIndex == toIndex{
+            return
+        }
+        
+        if toIndex == lastItemIndex{
             return
         }
         
@@ -41,10 +58,13 @@ class ItemStore{
         
     }
     
+
+    
     init(){
         for _ in 0..<5{
             createItem()
         }
+        createLastItem()
     }
     
 }

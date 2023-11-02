@@ -10,12 +10,18 @@ import UIKit
 class ItemsViewController: UITableViewController{
     
     var itemStore: ItemStore!
+    var lastItem: Item!
     
     @IBAction func addNewItem(_ sender: UIButton){
         
         let newItem = itemStore.createItem()
         
-        if let index = itemStore.allItems.firstIndex(of: newItem) {
+        if var index = itemStore.allItems.firstIndex(of: newItem) {
+            
+            itemStore.moveItem(from: index-1, to: index)
+            
+            index -= 1
+            
             let indexPath = IndexPath(row: index, section: 0)
             
             tableView.insertRows(at: [indexPath], with: .automatic)
@@ -56,6 +62,10 @@ class ItemsViewController: UITableViewController{
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = "$\(item.valueInDollars)"
         
+        if item == itemStore.allItems.last{
+            cell.isUserInteractionEnabled = false
+        }
+        
         return cell
     }
     
@@ -87,8 +97,34 @@ class ItemsViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+        tableView.reloadData()
+
     }
+    
+
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        lastItem = itemStore.allItems.last
+    }
+    
+    
+//    FORMA ELEGANTE DE HACER EL NO MORE ITEMS
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        let footerView = UITextView(frame: CGRect(x: 0, y: 0, width: 200, height: 44))
+//        footerView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15)
+//        footerView.textAlignment = .center
+//        footerView.autoresizingMask = [.flexibleWidth, .flexibleLeftMargin, .flexibleRightMargin]
+//        footerView.text = "No more items!"
+//        footerView.font = UIFont(name:"Arial", size: 18)
+//        self.tableView.tableFooterView = footerView
+//    }
     
 }
     
