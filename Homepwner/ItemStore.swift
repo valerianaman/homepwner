@@ -35,6 +35,17 @@ class ItemStore{
         }
     }
     
+    func reorderLastItem(){
+        let lastItemIndex = allItems.count-1
+        let noMoreItems = allItems[lastItemIndex-1]
+        
+        allItems.remove(at: lastItemIndex-1)
+        allItems.insert(noMoreItems, at: lastItemIndex)
+        
+        
+        
+    }
+    
     func moveItem(from fromIndex: Int, to toIndex: Int){
         
         let lastItemIndex = allItems.count - 1

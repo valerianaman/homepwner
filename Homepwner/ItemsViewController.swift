@@ -18,7 +18,8 @@ class ItemsViewController: UITableViewController{
         
         if var index = itemStore.allItems.firstIndex(of: newItem) {
             
-            itemStore.moveItem(from: index-1, to: index)
+//            itemStore.moveItem(from: index-1, to: index)
+            itemStore.reorderLastItem()
             
             index -= 1
             

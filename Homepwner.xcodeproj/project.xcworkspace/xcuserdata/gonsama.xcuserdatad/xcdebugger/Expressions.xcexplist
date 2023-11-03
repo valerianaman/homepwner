@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "ItemsViewController.addNewItem(_:):ItemsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "itemStore.allItems">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
