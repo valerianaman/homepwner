@@ -65,6 +65,7 @@ class ItemsViewController: UITableViewController{
         cell.nameLabel.text = item.name
         cell.serialNumberLabel.text = item.serialNumber
         cell.valueLabel.text = "$\(item.valueInDollars)"
+        cell.setColor(dolarValue: item.valueInDollars)
         
         if item == itemStore.allItems.last{
             cell.isUserInteractionEnabled = false
