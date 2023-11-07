@@ -14,7 +14,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var valueField: UITextField!
     @IBOutlet weak var dateCreatedLabel: UILabel!
 
-    var item: Item!
+    var item: Item! {
+        didSet{
+            navigationItem.title = item.name
+        }
+    }
     
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
