@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E27DA8AA2AF3EFD2007C2559 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27DA8A92AF3EFD2007C2559 /* ItemCell.swift */; };
 		E27DA8AC2AF93C7A007C2559 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27DA8AB2AF93C7A007C2559 /* DetailViewController.swift */; };
+		E27DA8AE2AFA18BA007C2559 /* ColoredBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27DA8AD2AFA18BA007C2559 /* ColoredBorderTextField.swift */; };
 		E2AF36E42AEA61730068CF13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF36E32AEA61730068CF13 /* AppDelegate.swift */; };
 		E2AF36E62AEA61730068CF13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF36E52AEA61730068CF13 /* SceneDelegate.swift */; };
 		E2AF36EB2AEA61730068CF13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2AF36E92AEA61730068CF13 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		E27DA8A92AF3EFD2007C2559 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		E27DA8AB2AF93C7A007C2559 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E27DA8AD2AFA18BA007C2559 /* ColoredBorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredBorderTextField.swift; sourceTree = "<group>"; };
 		E2AF36E02AEA61730068CF13 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2AF36E32AEA61730068CF13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2AF36E52AEA61730068CF13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				E2AF37172AEA6CBE0068CF13 /* ItemStore.swift */,
 				E27DA8A92AF3EFD2007C2559 /* ItemCell.swift */,
 				E27DA8AB2AF93C7A007C2559 /* DetailViewController.swift */,
+				E27DA8AD2AFA18BA007C2559 /* ColoredBorderTextField.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				E2AF36E42AEA61730068CF13 /* AppDelegate.swift in Sources */,
 				E2AF37182AEA6CBE0068CF13 /* ItemStore.swift in Sources */,
 				E2AF36E62AEA61730068CF13 /* SceneDelegate.swift in Sources */,
+				E27DA8AE2AFA18BA007C2559 /* ColoredBorderTextField.swift in Sources */,
 				E27DA8AC2AF93C7A007C2559 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

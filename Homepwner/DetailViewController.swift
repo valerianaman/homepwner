@@ -9,10 +9,10 @@ import UIKit
 
 class DetailViewController: UIViewController, UITextFieldDelegate{
     
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var serialField: UITextField!
-    @IBOutlet weak var valueField: UITextField!
-    @IBOutlet weak var dateCreatedLabel: UILabel!
+    @IBOutlet weak var nameField: ColoredBorderTextField!
+    @IBOutlet weak var serialField: ColoredBorderTextField!
+    @IBOutlet weak var valueField: ColoredBorderTextField!
+    @IBOutlet weak var dateCreatedLabel: ColoredBorderTextField!
 
     var item: Item! {
         didSet{

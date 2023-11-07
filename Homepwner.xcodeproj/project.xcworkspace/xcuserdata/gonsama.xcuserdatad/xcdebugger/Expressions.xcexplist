@@ -18,5 +18,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "ColoredBorderTextField.becomeFirstResponder():ColoredBorderTextField.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.borderStyle">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
