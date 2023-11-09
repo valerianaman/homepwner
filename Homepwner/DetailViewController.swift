@@ -9,6 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController, UITextFieldDelegate{
     
+    @IBOutlet weak var changeDateButton: UIButton!
     @IBOutlet weak var nameField: ColoredBorderTextField!
     @IBOutlet weak var serialField: ColoredBorderTextField!
     @IBOutlet weak var valueField: ColoredBorderTextField!
@@ -73,5 +74,15 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier{
+        case "changeDate"?:
+            let changeDateController = segue.destination as! datePickerController
+            changeDateController.item = item
+        default:
+            preconditionFailure("Unexpected segue identifier")
+        }
     }
 }

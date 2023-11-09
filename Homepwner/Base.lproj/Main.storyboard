@@ -148,11 +148,19 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVj-Wk-ltO">
-                                        <rect key="frame" x="0.0" y="126" width="377" height="536"/>
+                                        <rect key="frame" x="0.0" y="126.00000000000003" width="377" height="493.66666666666674"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2t-Pr-kqR">
+                                        <rect key="frame" x="0.0" y="627.66666666666663" width="377" height="34.333333333333371"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Change Date"/>
+                                        <connections>
+                                            <segue destination="Xfq-Np-cYK" kind="show" identifier="changeDate" id="OLY-gP-6BF"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="B3o-bf-25r" firstAttribute="leading" secondItem="5Q2-I8-f8T" secondAttribute="leading" id="U6M-Sw-lCm"/>
@@ -175,6 +183,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="71z-TQ-7p5"/>
                     <connections>
+                        <outlet property="changeDateButton" destination="z2t-Pr-kqR" id="UmY-qy-MMe"/>
                         <outlet property="dateCreatedLabel" destination="hVj-Wk-ltO" id="chI-OU-wfj"/>
                         <outlet property="nameField" destination="B3o-bf-25r" id="4Ke-67-oFb"/>
                         <outlet property="serialField" destination="5Q2-I8-f8T" id="1ld-8x-nJz"/>
@@ -189,6 +198,39 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1602.2900763358778" y="-829.57746478873241"/>
+        </scene>
+        <!--Date Picker Controller-->
+        <scene sceneID="9PY-Kg-Njl">
+            <objects>
+                <viewController id="Xfq-Np-cYK" customClass="datePickerController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cau-Qa-9HT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="DeL-M1-RMp">
+                                <rect key="frame" x="0.0" y="442.66666666666669" width="393" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="duT-68-hnZ"/>
+                                </constraints>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Mx-O4-1bn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DeL-M1-RMp" firstAttribute="trailing" secondItem="3Mx-O4-1bn" secondAttribute="trailing" id="91F-hd-waA"/>
+                            <constraint firstItem="DeL-M1-RMp" firstAttribute="centerX" secondItem="3Mx-O4-1bn" secondAttribute="centerX" id="M66-xj-lyr"/>
+                            <constraint firstItem="DeL-M1-RMp" firstAttribute="leading" secondItem="3Mx-O4-1bn" secondAttribute="leading" id="lcM-0v-6Mg"/>
+                            <constraint firstItem="DeL-M1-RMp" firstAttribute="centerY" secondItem="3Mx-O4-1bn" secondAttribute="centerY" id="mgF-Ve-qAC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jcC-Wx-JIP"/>
+                    <connections>
+                        <outlet property="datePicker" destination="DeL-M1-RMp" id="LFB-Lm-lNW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H0w-Yc-KGG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2426.7175572519081" y="-830.28169014084506"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m7R-d9-grP">
