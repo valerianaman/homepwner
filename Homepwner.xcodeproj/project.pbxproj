@@ -11,6 +11,7 @@
 		E27DA8AC2AF93C7A007C2559 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27DA8AB2AF93C7A007C2559 /* DetailViewController.swift */; };
 		E27DA8AE2AFA18BA007C2559 /* ColoredBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27DA8AD2AFA18BA007C2559 /* ColoredBorderTextField.swift */; };
 		E2924F732AFB554C006EA09F /* datePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2924F722AFB554C006EA09F /* datePickerController.swift */; };
+		E2924F752AFD3C5B006EA09F /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2924F742AFD3C5B006EA09F /* ImageStore.swift */; };
 		E2AF36E42AEA61730068CF13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF36E32AEA61730068CF13 /* AppDelegate.swift */; };
 		E2AF36E62AEA61730068CF13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF36E52AEA61730068CF13 /* SceneDelegate.swift */; };
 		E2AF36EB2AEA61730068CF13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2AF36E92AEA61730068CF13 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		E27DA8AB2AF93C7A007C2559 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E27DA8AD2AFA18BA007C2559 /* ColoredBorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredBorderTextField.swift; sourceTree = "<group>"; };
 		E2924F722AFB554C006EA09F /* datePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datePickerController.swift; sourceTree = "<group>"; };
+		E2924F742AFD3C5B006EA09F /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		E2AF36E02AEA61730068CF13 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2AF36E32AEA61730068CF13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2AF36E52AEA61730068CF13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				E27DA8AB2AF93C7A007C2559 /* DetailViewController.swift */,
 				E27DA8AD2AFA18BA007C2559 /* ColoredBorderTextField.swift */,
 				E2924F722AFB554C006EA09F /* datePickerController.swift */,
+				E2924F742AFD3C5B006EA09F /* ImageStore.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				E2AF37162AEA657E0068CF13 /* Item.swift in Sources */,
 				E2AF37142AEA63C00068CF13 /* ItemsViewController.swift in Sources */,
 				E27DA8AA2AF3EFD2007C2559 /* ItemCell.swift in Sources */,
+				E2924F752AFD3C5B006EA09F /* ImageStore.swift in Sources */,
 				E2AF36E42AEA61730068CF13 /* AppDelegate.swift in Sources */,
 				E2AF37182AEA6CBE0068CF13 /* ItemStore.swift in Sources */,
 				E2924F732AFB554C006EA09F /* datePickerController.swift in Sources */,

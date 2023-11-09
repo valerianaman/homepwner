@@ -22,6 +22,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         }
     }
     
+    var imageStore: ImageStore!
+    
     
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -52,6 +54,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
         serialField.text = item.serialNumber
         dateCreatedLabel.text = dateFormatter.string(from: item.dataCreated)
+        let imageToDisplay = imageStore.image(forKey: item.itemKey)
+        imageView.image = imageToDisplay
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -110,6 +114,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
         imageView.image = image
+        
+        imageStore.setImage(image, forKey: item.itemKey)
         
         dismiss(animated: true, completion: nil)
         
