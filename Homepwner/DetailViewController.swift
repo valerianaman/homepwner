@@ -7,19 +7,21 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate{
+class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
     @IBOutlet weak var changeDateButton: UIButton!
     @IBOutlet weak var nameField: ColoredBorderTextField!
     @IBOutlet weak var serialField: ColoredBorderTextField!
     @IBOutlet weak var valueField: ColoredBorderTextField!
     @IBOutlet weak var dateCreatedLabel: ColoredBorderTextField!
-
+    @IBOutlet var imageView: UIImageView!
+    
     var item: Item! {
         didSet{
             navigationItem.title = item.name
         }
     }
+    
     
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -84,5 +86,33 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
         default:
             preconditionFailure("Unexpected segue identifier")
         }
+    }
+    
+    @IBAction func takePicture(_ sender: UIBarButtonItem) {
+        let imagePicker = UIImagePickerController()
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            imagePicker.sourceType = .camera
+        }
+        else
+        {
+            imagePicker.sourceType = .photoLibrary
+        }
+        
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        imageView.image = image
+        
+        dismiss(animated: true, completion: nil)
+        
+        
     }
 }

@@ -88,7 +88,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UJy-AH-uag">
-                                <rect key="frame" x="8" y="148" width="377" height="662"/>
+                                <rect key="frame" x="8" y="103" width="377" height="663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="G4B-7Y-pdt">
                                         <rect key="frame" x="0.0" y="0.0" width="377" height="34"/>
@@ -148,34 +148,53 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVj-Wk-ltO">
-                                        <rect key="frame" x="0.0" y="126.00000000000003" width="377" height="493.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="125.99999999999999" width="377" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2t-Pr-kqR">
-                                        <rect key="frame" x="0.0" y="627.66666666666663" width="377" height="34.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="154.33333333333331" width="377" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Change Date"/>
                                         <connections>
                                             <segue destination="Xfq-Np-cYK" kind="show" identifier="changeDate" id="OLY-gP-6BF"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="xeW-OW-vCM">
+                                        <rect key="frame" x="0.0" y="196.66666666666671" width="377" height="466.33333333333326"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="B3o-bf-25r" firstAttribute="leading" secondItem="5Q2-I8-f8T" secondAttribute="leading" id="U6M-Sw-lCm"/>
                                     <constraint firstItem="5Q2-I8-f8T" firstAttribute="leading" secondItem="yhb-ic-Ulv" secondAttribute="leading" id="pbC-LV-Myp"/>
                                 </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzD-ps-q2W">
+                                <rect key="frame" x="0.0" y="774" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="E23-4W-EYQ"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="jbL-2f-0jG">
+                                        <connections>
+                                            <action selector="takePicture:" destination="bmF-dX-dUc" id="9K2-DP-5wk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KpV-ui-1GD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="KpV-ui-1GD" firstAttribute="bottom" secondItem="UJy-AH-uag" secondAttribute="bottom" constant="8" id="9IG-UA-EFp"/>
+                            <constraint firstItem="nzD-ps-q2W" firstAttribute="leading" secondItem="qf6-k0-hXe" secondAttribute="leading" id="FKs-4z-RuH"/>
+                            <constraint firstItem="nzD-ps-q2W" firstAttribute="bottom" secondItem="KpV-ui-1GD" secondAttribute="bottom" id="Yl3-nd-bO9"/>
                             <constraint firstItem="UJy-AH-uag" firstAttribute="leading" secondItem="KpV-ui-1GD" secondAttribute="leading" constant="8" id="ZeN-vM-4yo"/>
-                            <constraint firstItem="UJy-AH-uag" firstAttribute="top" secondItem="KpV-ui-1GD" secondAttribute="top" constant="45" id="jk2-V9-uxb"/>
+                            <constraint firstItem="nzD-ps-q2W" firstAttribute="top" secondItem="UJy-AH-uag" secondAttribute="bottom" constant="8" id="aQP-n4-jdt"/>
                             <constraint firstItem="KpV-ui-1GD" firstAttribute="trailing" secondItem="UJy-AH-uag" secondAttribute="trailing" constant="8" id="lJX-Lr-utW"/>
+                            <constraint firstItem="KpV-ui-1GD" firstAttribute="trailing" secondItem="nzD-ps-q2W" secondAttribute="trailing" id="sGN-Bz-vZe"/>
+                            <constraint firstItem="UJy-AH-uag" firstAttribute="top" secondItem="KpV-ui-1GD" secondAttribute="top" id="vPY-V1-T1w"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="loB-2b-JXY" appends="YES" id="IDH-pm-xPK"/>
@@ -185,6 +204,7 @@
                     <connections>
                         <outlet property="changeDateButton" destination="z2t-Pr-kqR" id="UmY-qy-MMe"/>
                         <outlet property="dateCreatedLabel" destination="hVj-Wk-ltO" id="chI-OU-wfj"/>
+                        <outlet property="imageView" destination="xeW-OW-vCM" id="yKt-eP-BDP"/>
                         <outlet property="nameField" destination="B3o-bf-25r" id="4Ke-67-oFb"/>
                         <outlet property="serialField" destination="5Q2-I8-f8T" id="1ld-8x-nJz"/>
                         <outlet property="valueField" destination="yhb-ic-Ulv" id="bWV-ip-OEA"/>
@@ -208,7 +228,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="DeL-M1-RMp">
-                                <rect key="frame" x="0.0" y="442.66666666666669" width="393" height="36"/>
+                                <rect key="frame" x="0.0" y="443" width="393" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="duT-68-hnZ"/>
                                 </constraints>
