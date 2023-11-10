@@ -174,11 +174,17 @@
                                 <rect key="frame" x="0.0" y="774" width="393" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="E23-4W-EYQ"/>
+                                    <constraint firstAttribute="width" secondItem="nzD-ps-q2W" secondAttribute="height" multiplier="393:44" id="nNo-vD-WjZ"/>
                                 </constraints>
                                 <items>
                                     <barButtonItem systemItem="camera" id="jbL-2f-0jG">
                                         <connections>
                                             <action selector="takePicture:" destination="bmF-dX-dUc" id="9K2-DP-5wk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="trash" id="rIh-QZ-ybM">
+                                        <connections>
+                                            <action selector="removePicture:" destination="bmF-dX-dUc" id="SmG-hq-m8P"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -228,7 +234,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="DeL-M1-RMp">
-                                <rect key="frame" x="0.0" y="443" width="393" height="36"/>
+                                <rect key="frame" x="0.0" y="442.66666666666669" width="393" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="duT-68-hnZ"/>
                                 </constraints>

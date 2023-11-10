@@ -108,7 +108,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         present(imagePicker, animated: true, completion: nil)
     }
     
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    @IBAction func removePicture(_ sender: UIBarButtonItem){
+        
+        // logic to remove the picture
+        imageStore.deleteImage(forKey: item.itemKey)
+        imageView.image = nil
+        
+    }
+
         
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
