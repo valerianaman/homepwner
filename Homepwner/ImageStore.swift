@@ -16,7 +16,7 @@ class ImageStore{
 
         let url = self.imageURL(forKey: key)
         do{
-            if let data = image.jpegData(compressionQuality: 0.5){
+            if let data = image.jpegData(compressionQuality: 0.5 ){
                 try data.write(to: url, options: .atomic)
             }
         } catch{
@@ -26,18 +26,39 @@ class ImageStore{
     }
     
     func image(forKey key: String) -> UIImage? {
-        return cache.object(forKey: key as NSString)
+
+        if let existingImage = cache.object(forKey: key as NSString){
+            return existingImage
+        }
+
+        let url = self.imageURL(forKey: key)
+        guard let imageFromDisk = UIImage(contentsOfFile: url.path) else { return nil
+        }
+            
+        cache.setObject(imageFromDisk, forKey: key as NSString)
+        return imageFromDisk
         
     }
     
     func deleteImage(forKey key: String){
         cache.removeObject(forKey: key as NSString)
+        
+        let url = self.imageURL(forKey: key)
+        
+        do{
+            
+            try FileManager.default.removeItem(at: url)
+        }catch let deleteError{
+            print("\(deleteError)")
+        }
+        
     }
     
     func imageURL(forKey key: String)->URL {
         let documentDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = documentDirectories.first!
         
-        return documentDirectory
+        
+        return documentDirectory.appendingPathComponent(key)
     }
 }
