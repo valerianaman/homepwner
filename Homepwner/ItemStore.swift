@@ -11,6 +11,25 @@ class ItemStore{
     
     var allItems = [Item]()
     
+    let itemArchiveURL: URL = {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.appendingPathComponent("items.archive")
+    }()
+    
+    func saveChanges()->Bool{
+        print("Saving items to \(itemArchiveURL.path)")
+        
+        do{
+            let data = try NSKeyedArchiver.archivedData(withRootObject: allItems, requiringSecureCoding: false)
+            try data.write(to: itemArchiveURL)
+            return true
+        } catch {
+            return false
+        }
+    }
+        
+    
     @discardableResult func createItem() -> Item{
         let newItem = Item(random: true)
         
@@ -71,11 +90,26 @@ class ItemStore{
     
 
     
+//    init(){
+//        for _ in 0..<5{
+//            createItem()
+//        }
+//        createLastItem()
+//    }
+           
     init(){
-        for _ in 0..<5{
-            createItem()
+        
+        if let nsData = NSData(contentsOf: self.itemArchiveURL){
+            do{
+                let data  = Data(referencing:nsData)
+                
+                let myUnarchiver = try NSKeyedUnarchiver(forReadingFrom: data)
+                myUnarchiver.requiresSecureCoding = false
+                
+                self.allItems = myUnarchiver.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as! [Item]
+            }catch{
+                print("\(error)")
+            }
         }
-        createLastItem()
     }
-    
 }

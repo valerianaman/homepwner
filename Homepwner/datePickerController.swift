@@ -16,14 +16,14 @@ class datePickerController:UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        datePicker.date = item.dataCreated
+        datePicker.date = item.dateCreated
         
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        item.dataCreated = datePicker.date
+        item.dateCreated = datePicker.date
     }
     
 }

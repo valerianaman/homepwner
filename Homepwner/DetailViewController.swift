@@ -53,7 +53,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         nameField.text = item.name
         valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
         serialField.text = item.serialNumber
-        dateCreatedLabel.text = dateFormatter.string(from: item.dataCreated)
+        dateCreatedLabel.text = dateFormatter.string(from: item.dateCreated)
         let imageToDisplay = imageStore.image(forKey: item.itemKey)
         imageView.image = imageToDisplay
     }
@@ -104,7 +104,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         }
         
         imagePicker.delegate = self
-        
+                
         present(imagePicker, animated: true, completion: nil)
     }
     

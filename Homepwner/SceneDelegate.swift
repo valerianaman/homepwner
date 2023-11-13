@@ -11,11 +11,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    let itemStore = ItemStore()
+    
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         let navController = window!.rootViewController as! UINavigationController
-        let itemStore = ItemStore()
+        
         let imageStore = ImageStore()
         let itemsController = navController.topViewController as! ItemsViewController
         itemsController.itemStore = itemStore
@@ -53,6 +55,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        
+        let success = itemStore.saveChanges()
+        
+        if success {
+            print("Saved all of the items")
+        }else{
+            print("Could not save any of the items")
+        }
     }
 
 
